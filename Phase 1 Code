@@ -1,0 +1,65 @@
+
+
+
+//Servo Setup: 
+      Servo Yaw;  // Creating Yaw servo, bottom
+      int servoPinYaw = 9; //pinout from Arduino
+      
+            void setup() {
+              myServo.attach(servoPinYaw);  // Attach the servo on pin 9
+            }
+      
+      Servo Roll;  // Creating Roll servo, top
+      int servoPinRoll = 8; //pinout from Arduino
+      
+            void setup() {
+              myServo.attach(servoPinRoll);  // Attach the servo on pin 9
+            }
+  
+  
+
+//LDR Setup and Readout:
+      const int LDR1 = A1; // LDR pin setup
+      const int LDR2 = A2;
+      const int LDR3 = A3; 
+      const int LDR4 = A4;
+      
+      void setup() {
+        Serial.begin(9600);    // Initialize serial communication at 9600 baud
+      }
+    
+    
+      void loop() {
+        int lightValue1 = analogRead(LDR1); // Read the input voltage (0-1023)
+        Serial.print("LDR1 Light Value: ");
+        Serial.println(lightValue1);          // Print the reading to the monitor
+        delay(200);                          // Short delay for readability
+      }
+    
+     void loop() {
+        int lightValue2 = analogRead(LDR2); // Read the input voltage (0-1023)
+        Serial.print("LDR2 Light Value: ");
+        Serial.println(lightValue2);          // Print the reading to the monitor
+        delay(200);                          // Short delay for readability
+      }
+    
+     void loop() {
+        int lightValue3 = analogRead(LDR3); // Read the input voltage (0-1023)
+        Serial.print("LDR3 Light Value: ");
+        Serial.println(lightValue3);          // Print the reading to the monitor
+        delay(200);                          // Short delay for readability
+      }
+    
+     void loop() {
+        int lightValue4 = analogRead(LDR4); // Read the input voltage (0-1023)
+        Serial.print("LDR4 Light Value: ");
+        Serial.println(lightValue4);          // Print the reading to the monitor
+        delay(200);                          // Short delay for readability
+      }
+  
+
+
+
+
+
+
