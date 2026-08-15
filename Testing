@@ -1,4 +1,6 @@
 
+
+
 //Servo Setup: 
      #include <Servo.h>
       Servo Yaw;  // Creating Yaw servo, bottom
@@ -11,8 +13,6 @@
       const int LDR2 = A2;
       const int LDR3 = A3; 
       const int LDR4 = A4;
-
-      
       
       
       void setup() {
@@ -23,35 +23,35 @@
 
       
       void loop() {
-              int lightValue1 = analogRead(LDR1); // Read the input voltage (0-1023)
+              int light1 = analogRead(LDR1); // Read the input voltage (0-1023)
+              int light2 = analogRead(LDR2);
+              int light3 = analogRead(LDR3);
+              int light4 = analogRead(LDR4);
+
+              int maxlight = light1;
+              String maxlightString = "light 1";
               
+                if (light2 > maxlight) {
+                  maxlight = light2;
+                  maxlightString = "light 2";
+                  }
+                  
+                if (light3 > maxlight) {
+                  maxlight = light3;
+                  maxlightString = "light 3";
+                  }
+                  
+                if (light4 > maxlight) {
+                  maxlight = light4;
+                  maxlightString = "light 4";}
 
-              Serial.print("LDR1 Light Value: ");
-              Serial.println(lightValue1);          // Print the reading to the monitor
-              delay(500);   // Short delay for readability 
+              Serial.print("Max Light: ");
+              Serial.println(maxlightString);          // Print the reading to the monitor
 
-              Yaw.write(0); //move to 0 deg
-              Roll.write(0); //move to 90deg
-            
-              int lightValue2 = analogRead(LDR2); // Read the input voltage (0-1023)
-              Serial.print("LDR2 Light Value: ");
-              Serial.println(lightValue2);          // Print the reading to the monitor
+              Serial.print("Value: ");
+              Serial.println(maxlight);
+              
               delay(500);                          // Short delay for readability
               
-              Yaw.write(90); //move to 90deg
-              Roll.write(90); //move to 90deg
-              
-              int lightValue3 = analogRead(LDR3); // Read the input voltage (0-1023)
-              Serial.print("LDR3 Light Value: ");
-              Serial.println(lightValue3);          // Print the reading to the monitor
-              delay(500); 
-            
-              Yaw.write(180); //move to 180deg
-              Roll.write(180); //move to 180deg
-
-              int lightValue4 = analogRead(LDR4); // Read the input voltage (0-1023)
-              Serial.print("LDR4 Light Value: ");
-              Serial.println(lightValue4);          // Print the reading to the monitor
-              delay(500);
       }
   
