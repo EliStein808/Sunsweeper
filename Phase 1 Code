@@ -2,6 +2,7 @@
 
 
 //Servo Setup: 
+      #include <Servo.h>
       Servo Yaw;  // Creating Yaw servo, bottom
       Servo Roll; // Creating Roll servo, top
 
